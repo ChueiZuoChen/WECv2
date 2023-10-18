@@ -4,7 +4,7 @@ import numpy as np
 if __name__ == '__main__':
     # Load face detector model, to fetch all the faces points and head rectangle.
     detector = cv2.CascadeClassifier('xml/haarcascade_frontalface_default.xml')
-    recog = cv2.face.LBPHFaceRecognizer_create()
+    face_recognizer = cv2.face.LBPHFaceRecognizer_create()
     face_detect_result_collection = []
     face_id = []
 
@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
     print('training model...')
     # Here is the ML training entry point, feed face detection's result collections and face id to it for training ML model.
-    recog.train(face_detect_result_collection, np.array(face_id))
+    face_recognizer.train(face_detect_result_collection, np.array(face_id))
     # Save new model that we just trained.
-    recog.save('face.yml')
+    face_recognizer.save('face.yml')
     print('ok!')

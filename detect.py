@@ -21,7 +21,8 @@ while True:
     name = {
         '1': 'Potti',
         '2': 'Didi',
-        '3': 'Eric'
+        '3': 'Eric',
+        '4': 'Someone Else'
     }
 
     for (x, y, w, h) in faces:

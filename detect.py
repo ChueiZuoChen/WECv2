@@ -41,7 +41,7 @@ while True:
         # Use our model that just trained as the recognizer to predict each face.
         id_number, confidence_level = recognizer.predict(input_gray_image[y:y + h, x:x + w])
         # After predict we will also get the confidence, this one is to identify likelihood for each face.
-        if confidence_level < 65:
+        if confidence_level < 63:
             # If confidence level reach our target, then we will put the name by id enum on the view.
             print(name[str(id_number)])
             text = name[str(id_number)]
